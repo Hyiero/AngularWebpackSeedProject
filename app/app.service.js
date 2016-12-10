@@ -5,7 +5,7 @@
 export default function appService($resource){
     "use strict";
 
-    let resource = $resource();
+    let resource = $resource("/testResource",{id: "@id"});
 
     return resource;
 }

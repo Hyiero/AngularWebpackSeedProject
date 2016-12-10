@@ -4,8 +4,9 @@
   "description": "Angular seed project that uses webpack for bundling",
   "main": "index.js",
   "scripts": {
-    "start": "node ./node_modules/webpack/bin/webpack.js",
-    "poststart": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server",
+    "start": "node ./node_modules/webpack/bin/webpack --config webpack.config.dev.js --display-chunks --progress",
+    "poststart": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.config.dev.js",
+    "build": "node ./node_modules/webpack/bin/webpack  --config webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "angular": "~1.5.9",
+    "angular-resource": "~1.5.9",
     "angular-ui-router": "^1.0.0-beta.3",
     "bootstrap": "^3.3.7"
   },
@@ -37,6 +39,9 @@
     "css-loader": "^0.26.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
+    "jasmine": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-webpack": "^1.8.0",
     "path": "^0.12.7",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.1",
