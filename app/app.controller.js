@@ -9,12 +9,13 @@ export default function appController(appService){
     vm.name = "Welcome to your sample Angular Webpack Seed Project. This is awesome";
     vm.test = '';
     vm.makeGetCall = function(){
-        appService.get(onSuccess,onFail);
+        appService.get({id: 1},onSuccess,onFail);
     };
 
-    function onSuccess(){
+    function onSuccess(data){
         console.log("Call Succeeded");
         vm.test = 'Success';
+        console.log(data);
     }
 
     function onFail(){

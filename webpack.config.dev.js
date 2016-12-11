@@ -1,6 +1,12 @@
-var webpack = require('webpack');
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const proxies = {
+    "iis": "http://localhost",
+    "json": "http://localhost:3000"
+};
+
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     //This is the absolute path to your application's source files
@@ -60,9 +66,13 @@ module.exports = {
         hot: true,
         contentBase: path.join(__dirname,'/dist'),
         inline: true,
-        /*proxy: {
-            '*': 'http://localhost:9001'
-        },*/
+        proxy: {
+            "/api/**/*": {
+                target: proxies[process.env.target || "iis"],
+                changeOrigin: true,
+                logLevel: "debug",
+            }
+        },
         watchOptions: {
             aggregateTimeout: 300,
             poll: 1000
