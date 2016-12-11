@@ -11,5 +11,5 @@ import appService from './app.service';
 
 export default angular.module('app',[router,ngResource])
     .factory(appService.name,appService)
-    .controller(appController)
+    .controller(appController.name,appController)
     .config(appConfig)

@@ -15,7 +15,7 @@ module.exports = {
     //This is where you decide where the bundles will be output and the name of your bundles
     output: {
         path: path.join(__dirname + '/dist'),
-        filename: '[name].bundle.js' //For Prod Webpack config add [hash] here.
+        filename: '[name].bundle.js'
     },
     resolve: {
         modulesDirectories: ['node_modules','app'],
@@ -53,9 +53,8 @@ module.exports = {
             template: './app/index.html',
             inject: 'body'
         }),
-        new webpack.HotModuleReplacementPlugin(), //Remove this in Prod
-        new webpack.NoErrorsPlugin(),
-        new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js") //For prod add [hash] here
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
     ],
     devServer: { //Remove dev server from prod
         hot: true,
