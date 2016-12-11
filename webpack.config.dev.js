@@ -6,7 +6,6 @@ const proxies = {
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     //This is the absolute path to your application's source files

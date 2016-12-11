@@ -9,6 +9,10 @@ import appConfig from './app.config';
 import appService from './app.service';
 
 
+/** App Module
+ * @module app
+ */
+
 export default angular.module('app',[router,ngResource])
     .factory(appService.name,appService)
     .controller(appController.name,appController)

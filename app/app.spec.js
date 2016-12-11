@@ -41,7 +41,7 @@ describe('AppModule',function(){
 
         it('should call the success callback function on a successful call',function(){
             //Arrange
-            let getRequest = $http.expectGET('/api/testResource').respond(200,'');
+            let getRequest = $http.expectGET('/api/testResource/1').respond(200,'');
 
             //Act
             controller.makeGetCall();
@@ -52,7 +52,7 @@ describe('AppModule',function(){
 
         it('should call the success callback function on a successful call',function(){
             //Arrange
-            let getRequest = $http.expectGET('/api/testResource').respond(400,'');
+            let getRequest = $http.expectGET('/api/testResource/1').respond(400,'');
 
             //Act
             controller.makeGetCall();
