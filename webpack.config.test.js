@@ -6,7 +6,7 @@ module.exports = {
     //This is the absolute path to your application's source files
     context: __dirname,
     //Declaring that we will be using source-maps
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     //This is the name/entry point for where your apps modules begin
     entry: {
     },
@@ -39,9 +39,6 @@ module.exports = {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 loader: 'file?name=public/fonts/[name].[ext]'
             }
-        ],
-        postLoaders: [
-            { test: /\.js$/, loader: 'isparta', include: path.join(__dirname, './app') }
         ]
     }
 };

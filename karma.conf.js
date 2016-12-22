@@ -4,6 +4,10 @@
 
 var webpackConfig = require('./webpack.config.test');
 var path = require('path');
+//In order for coverage we need to pass an environment variable...coverage=true npm test
+if(process.env.coverage)
+    webpackConfig.module.postLoaders = [
+        { test: /\.js$/, loader: 'isparta', include: path.join(__dirname, './app') }];
 
 module.exports = function(config){
     "use strict";
